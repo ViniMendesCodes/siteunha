@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer de unhas Wivian Mendes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 45%;
+            margin: 0 10px;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #614caf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .centered-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .centered-list li {
+            margin: 10px 0;
+        }
+        .whatsapp-button {
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .whatsapp-button:hover {
+            background-color: #1EBE57;
+        }
+        .dropdown {
+            position: relative;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #ff0000;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 10px;
+        }
+        .dropdown-content .editable-item {
+            color: black;
+            padding: 8px;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+        .dropdown-content .editable-item:last-child {
+            margin-bottom: 0;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><strong>Designer de unhas Wivian Mendes</strong></h1>
+        <p>Agende seu horário pelo WhatsApp: <a href="https://wa.me/13997753107" target="_blank" class="whatsapp-button">Clique aqui</a></p>
+    </header>
+    <div class="dropdown">
+        <button id="meus-servicos-btn" class="dropbtn">Meus Serviços</button>
+        <div class="dropdown-content">
+            <input type="text" class="editable-item" value="Tópico 1">
+            <input type="text" class="editable-item" value="Tópico 2">
+            <input type="text" class="editable-item" value="Tópico 3">
+            <input type="text" class="editable-item" value="Tópico 4">
+            <!-- Adicione mais tópicos conforme necessário -->
+        </div>
+    </div>
+    <main>
+        <section>
+            <h2>Sobre mim</h2>
+            <p>Bem-vindo ao meu espaço! Sou apaixonada por deixar suas unhas lindas e bem cuidadas. Venha conferir meus serviços!</p>
+        </section>
+        <section>
+            <h2>Serviços</h2>
+            <ul class="centered-list">
+                <li>Manicure</li>
+                <li>Unhas de vidro</li>
+                <li>Unhas de gel</li>
+                <li>Unhas decoradas</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Horário de Funcionamento</h2>
+            <p>Para marcar um horário comigo, basta apenas me chamar no <strong>Whatsapp</strong> para contato.</p>
+        </section>
+        <div class="image-container">
+            <img src="uha1.jpg" alt="Imagem 1">
+            <img src="uha2.jpg" alt="Imagem 2">
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.dropbtn').addEventListener('click', function() {
+                const dropdownContent = document.querySelector('.dropdown-content');
+                dropdownContent.classList.toggle('show');
+
+                // Alterar a exibição dos elementos de input quando o botão é clicado
+                const editableItems = dropdownContent.querySelectorAll('.editable-item');
+                editableItems.forEach(item => {
+                    item.style.display = dropdownContent.classList.contains('show') ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Fechar o dropdown se o usuário clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
